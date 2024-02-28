@@ -1,0 +1,24 @@
+package entidades;
+
+public class Produtos {
+	public String tipoProduto;
+	public Double precoProduto;
+	Integer quantidadeProduto;
+	
+	
+	
+	
+	
+	public void addProduto(Integer valor) {
+		quantidadeProduto += valor;
+		
+	}
+	public void removeProduto(Integer valor) {
+		quantidadeProduto -= valor;
+	}
+	
+	public Double precoTotal() {
+		return precoProduto * quantidadeProduto;
+	}
+
+}

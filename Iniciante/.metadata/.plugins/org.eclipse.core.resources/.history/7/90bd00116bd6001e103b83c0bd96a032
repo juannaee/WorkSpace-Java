@@ -1,0 +1,26 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+import entidades.Produtos;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		Produtos produto1;
+		
+		
+		
+		
+		
+		sc.close();
+
+
+	}
+
+}

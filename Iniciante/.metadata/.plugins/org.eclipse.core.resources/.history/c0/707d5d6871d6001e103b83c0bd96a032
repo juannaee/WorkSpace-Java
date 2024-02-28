@@ -1,0 +1,49 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+import entidades.Produtos;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		Produtos produto1;
+
+		produto1 = new Produtos();
+
+		produto1.precoProduto = 10.00;
+		produto1.addProduto(3);
+		produto1.removeProduto(1);
+		System.out.println(produto1.precoTotal());
+
+		while (true) {
+			System.out.println("1 - Continuar / 2 - Parar");
+
+			try {
+
+				Integer contador = sc.nextInt();
+				if (contador == 1 || contador == 2) {
+					break;
+
+				} else {
+					throw new IllegalArgumentException();
+			
+				}
+
+			} catch (Exception e) {
+				sc.nextLine();
+				System.out.println("Entrada invalida! tente novamente");
+			
+
+			}
+			
+		}
+		
+		System.out.println("passei ate aqui");
+
+	}
+
+}
