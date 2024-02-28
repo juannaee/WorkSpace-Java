@@ -1,0 +1,14 @@
+package entidades;
+
+public class Produtos {
+	String tipoProduto;
+	Double precoProduto;
+	Integer quantidadeProduto;
+	
+	
+	
+	public Double precoTotal() {
+		return precoProduto * quantidadeProduto;
+	}
+
+}

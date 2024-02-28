@@ -1,0 +1,18 @@
+package entidades;
+
+public class Triangulo {
+	public Double ladoA;
+	public Double ladoB;
+	public Double ladoC;
+	
+	
+	
+	public Double soma(Double value1,Double value2, Double value3) {
+		
+		
+		
+		return 0.0;
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package repetitiva;
+
+public class Repetitiva_1 {
+
+	public static void main(String[] args) {
+		
+		Integer contador = 1;
+
+		while(contador < 5) {
+			System.out.println(contador);
+			contador += 1;
+			
+		}
+		
+		for(int i = 0; i<5;i++) {
+			
+		}
+
+	}
+
+}

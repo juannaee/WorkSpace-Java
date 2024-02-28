@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class sequencial_1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Olá Mundo");
+		System.out.println("----------------");
+
+		String x;
+		int y;
+		double a;
+		System.out.print("Digite nome: ");
+		x = sc.next();
+		System.out.print("Digite numero: ");
+		y = sc.nextInt();
+		System.out.print("Digite numero flutuante: ");
+		a = sc.nextInt();
+		System.out.println("Você digitou: " + x);
+		System.out.println("Você digitou: " + y);
+
+		sc.close();
+
+	}
+
+}

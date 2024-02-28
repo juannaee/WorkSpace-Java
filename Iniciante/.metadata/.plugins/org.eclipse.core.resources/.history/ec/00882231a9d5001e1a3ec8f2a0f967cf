@@ -1,0 +1,15 @@
+package aplicacao;
+
+import entidades.Triangulo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Triangulo x,y;
+		
+		x = new Triangulo;
+
+	}
+
+}

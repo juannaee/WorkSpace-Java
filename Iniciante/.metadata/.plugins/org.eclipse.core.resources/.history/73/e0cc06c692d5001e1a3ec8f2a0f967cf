@@ -1,0 +1,15 @@
+package repetitiva;
+
+public class Repetitiva_1 {
+
+	public static void main(String[] args) {
+		
+		Integer contador = 1;
+
+		while(contador < 15) {
+			
+		}
+
+	}
+
+}
