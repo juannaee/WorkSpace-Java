@@ -14,11 +14,10 @@ public class Main2 {
 		Integer contador;
 		Integer quantidade;
 
-		produto1 = new Produtos();
-
+		produto1 = new Produtos("Eletronico");
 
 		System.out.println("Valor unitario do produto: ");
-		produto1.precoProduto = sc.nextDouble();		
+		produto1.setPrecoProduto(sc.nextDouble());		
 		while (true) {
 			System.out.println("1  - Adicionar Produto / 2 - Remover Produto / 3 - Sair");
 
@@ -57,6 +56,9 @@ public class Main2 {
 			}
 
 		}
+		
+		System.out.println();
+		System.out.println(produto1);
 		sc.close();
 
 	}
