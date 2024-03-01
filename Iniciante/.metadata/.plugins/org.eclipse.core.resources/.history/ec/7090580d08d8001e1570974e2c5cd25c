@@ -1,0 +1,13 @@
+package aplicacao;
+
+import entidades.Conta;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+
+		Conta conta1;
+
+	}
+
+}

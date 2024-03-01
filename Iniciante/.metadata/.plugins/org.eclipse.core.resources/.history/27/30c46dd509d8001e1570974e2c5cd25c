@@ -1,0 +1,27 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+import entidades.Conta;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Conta conta1;
+		conta1 = new Conta();
+		
+		
+		while(true)
+		
+		System.out.println(conta1);
+		sc.close();
+		
+		
+		
+		
+		
+
+	}
+
+}

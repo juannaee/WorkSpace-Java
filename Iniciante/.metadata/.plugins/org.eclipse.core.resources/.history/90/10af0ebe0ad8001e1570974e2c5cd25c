@@ -1,0 +1,45 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+import entidades.Conta;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Conta conta1;
+
+		System.out.println("Digite seu nome: ");
+		String nomeCliente = sc.nextLine();
+		conta1 = new Conta(nomeCliente);
+
+		while (true) {
+
+			try {
+
+				Integer opcao = sc.nextInt();
+				
+
+			} catch (Exception e) {
+				System.out.println("Opção indisponivel!!!" + "\n" + "Opções disponiveis: " + "\n");
+			}
+
+			break;
+
+		}
+
+		System.out.println(conta1);
+		sc.close();
+
+	}
+
+	
+	public static void msgOption() {
+		System.out.println("1 - Sacar" + "\n" + "2 - Depositar" + "\n" + "3 - Sair");
+	}
+	
+}
+
+
+

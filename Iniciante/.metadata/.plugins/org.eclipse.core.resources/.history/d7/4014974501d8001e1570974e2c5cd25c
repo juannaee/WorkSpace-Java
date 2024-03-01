@@ -1,0 +1,27 @@
+package entidades;
+
+public class Conta {
+
+	private String nomeCliente;
+	private Double saldoCliente;
+
+	public Conta() {
+
+	}
+
+	public Conta(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+
+	}
+	
+	public String getNomeCliente() {
+		return this.nomeCliente;
+	}
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+	
+	
+	
+
+}

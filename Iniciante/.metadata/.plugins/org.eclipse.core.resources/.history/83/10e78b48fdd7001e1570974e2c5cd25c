@@ -1,0 +1,15 @@
+package entidades;
+
+public class Conta {
+
+	private String nomeCliente;
+	private Double saldoCliente;
+	
+	
+	public Conta () {
+		
+	}
+	
+	
+	
+}
