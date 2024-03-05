@@ -1,7 +1,5 @@
 package entidades;
 
-import java.lang.annotation.Documented;
-
 import logica.OrdemStatus;
 
 public class Produtos4 {
@@ -61,50 +59,70 @@ public class Produtos4 {
 	}
 
 	public String toString() {
-		return "Preço unitario: " + getPrecoUnitProduto() + " /// " + "Quantidade: " + getQtdProduto() + " /// "
-				+ "Preço total: " + precoTotal();
+		return "Detalhes do Pedido:\n" + " - Nome: " + getNomeProduto() + "\n" + "  - Preço Unitário: "
+				+ getPrecoUnitProduto() + "\n" + "  - Quantidade: " + getQtdProduto() + "\n" + "  - Preço Total: "
+				+ precoTotal() + "\n" + "  - Status: " + statusOrdem.getDescricao() + "\n";
 
 	}
 
-}
+	class Produtos4Util {
 
-class Produtos4Util {
+		/**
+		 * Adiciona a quantidade especificada de produtos.
+		 * 
+		 * @throws IllegalArgumentException Se a quantidade for negativa.
+		 * @param quantidade, A quantidade de produtos a ser adicionada.
+		 */
 
-	/**
-	 * Adiciona a quantidade especificada de produtos.
-	 * 
-	 * @throws IllegalArgumentException Se a quantidade for negativa.
-	 * @param quantidade, A quantidade de produtos a ser adicionada.
-	 */
-
-	public Integer addProduto(Integer quantidadeAdd, Integer qtdProduto) {
-		verificacaoNegativa(quantidadeAdd);
-		return qtdProduto + quantidadeAdd;
-	}
-
-	/**
-	 * Remove a quantidade especificada de produtos.
-	 * 
-	 * @throws IllegalArgumentException Se a quantidade for negativa
-	 * @param quantidade, A quantidade de produtos a ser removida
-	 */
-	public Integer removerProduto(Integer quantidade, Integer qtdProduto) {
-		verificacaoNegativa(quantidade);
-		return qtdProduto - quantidade;
-	}
-
-	/**
-	 * Verificação de valores negativos
-	 * 
-	 * @throws IllegalArgumentException Se o valor for negativo
-	 * @param valor, Valor verificado
-	 */
-
-	private void verificacaoNegativa(Integer valor) {
-		if (valor < 0) {
-			throw new IllegalArgumentException("Quantidade negativa inserida: " + valor);
-
+		public Integer addProduto(Integer quantidadeAdd, Integer qtdProduto) {
+			verificacaoNegativa(quantidadeAdd);
+			return qtdProduto + quantidadeAdd;
 		}
+
+		/**
+		 * Remove a quantidade especificada de produtos.
+		 * 
+		 * @throws IllegalArgumentException, Se o valor for maior que a quantidade
+		 * @throws IllegalArgumentException, Se a quantidade for negativa
+		 * @param quantidade, A quantidade de produtos a ser removida
+		 */
+		public Integer removerProduto(Integer quantidade, Integer qtdProduto) {
+			verificacaoNegativa(quantidade);
+			if (verificaoQuantidade(quantidade, qtdProduto)) {
+				qtdProduto = 0;
+				quantidade = 0;
+			}
+			return qtdProduto - quantidade;
+		}
+
+		/**
+		 * Verificação de valores negativos
+		 * 
+		 * @throws IllegalArgumentException Se o valor for negativo
+		 * @param valor, Valor verificado
+		 */
+
+		private void verificacaoNegativa(Integer valor) {
+			if (valor < 0) {
+				throw new IllegalArgumentException("Quantidade negativa inserida: " + valor);
+
+			}
+		}
+
+		/**
+		 * @throws IllegalArgumentException, Se o valor for maior que a quantidade
+		 * @param valor,       Valor a ser inserido pelo usuario
+		 * @param qtdProdutos, Quantidade de produtos disponivel
+		 */
+		private Boolean verificaoQuantidade(Integer valor, Integer qtdProdutos) {
+			if (valor > qtdProdutos) {
+				System.out.println("\n\nErro: Quantidade de itens insuficiente\n\nDetalhes:\n" + "Valor inserido: "
+						+ valor + "\n" + "Quantidade disponível: " + qtdProdutos + "\n");
+				return true;
+			}
+			return false;
+		}
+
 	}
 
 }
