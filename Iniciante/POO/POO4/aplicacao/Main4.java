@@ -173,15 +173,24 @@ public class Main4 {
 
 		if (id >= 0 && id < lista.size()) {
 			linhaDeSeparacao();
-			System.out.println("Produto selecionado: " + "\n" + lista.get(id));
+			Produtos4 produto = lista.get(id);
+			System.out.println("Produto selecionado: " + "\n" + produto);
 			linhaDeSeparacao();
 			System.out.println();
+			System.out.println("Digite um novo nome para o produto");
+			String nomeProduto = sc.nextLine();
+			produto.setNomeProduto(nomeProduto);
+			produto.setStatusOrdem(OrdemStatus.PROCESSANDO);
+			System.out.println("Status da ordem atualizado: " + produto.getStatusOrdem());
+			System.out.println("Produto atualizado com sucesso: ");
+			produto.setStatusOrdem(OrdemStatus.COMPLETA);
+			System.out.println("Status da ordem atualizado: " + produto.getStatusOrdem());
 
 		} else {
 			linhaDeSeparacao();
 			System.out.println("ID inválido! Nenhum produto foi editado.");
 			linhaDeSeparacao();
-			linhaDeSeparacao();
+
 		}
 
 	}
