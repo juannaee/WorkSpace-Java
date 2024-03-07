@@ -1,5 +1,6 @@
 package aplicacao;
 
+/*import java.lang.reflect.Field;*/
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +35,7 @@ public class Main4 {
 			case 2: {
 
 				linhaDeSeparacao();
-				System.out.println("Em produção.......");
+				editarProduto(lista);
 				linhaDeSeparacao();
 				break;
 			}
@@ -147,11 +148,62 @@ public class Main4 {
 		System.out.print("ID: ");
 		Integer id = sc.nextInt();
 		sc.nextLine();
-		lista.remove((int) id);
-		System.out.println("Produto removido com sucesso!\n");
-		System.out.println("Lista Atualizada:\n");
-		mostrarLista(lista);
+		if (id >= 0 && id < lista.size()) {
+			lista.remove((int) id);
+			System.out.println("Produto removido com sucesso!\n");
+			linhaDeSeparacao();
+			System.out.println("Lista Atualizada:\n");
+			mostrarLista(lista);
+			linhaDeSeparacao();
+
+		} else {
+			linhaDeSeparacao();
+			System.out.println("ID inválido! Nenhum produto foi editado.");
+			linhaDeSeparacao();
+		}
 
 	}
 
+	private static void editarProduto(List<Produtos4> lista) {
+		System.out.println("Escolha um produto para editar pelo ID\nProdutos em estoque:\n");
+		mostrarLista(lista);
+		System.out.print("ID: ");
+		Integer id = sc.nextInt();
+		sc.nextLine();
+
+		if (id >= 0 && id < lista.size()) {
+			linhaDeSeparacao();
+			System.out.println("Produto selecionado: " + "\n" + lista.get(id));
+			linhaDeSeparacao();
+			System.out.println();
+
+		} else {
+			linhaDeSeparacao();
+			System.out.println("ID inválido! Nenhum produto foi editado.");
+			linhaDeSeparacao();
+			linhaDeSeparacao();
+		}
+
+	}
+
+	/**
+	 * private static void mostrarAtributos() { List<String> atributosEditaveis =
+	 * obterAtributosEditaveis(Produtos4.class);
+	 * 
+	 * System.out.println("Atributos editáveis: "); for (String atributo :
+	 * atributosEditaveis) { System.out.println(atributo); } }
+	 * 
+	 * private static List<String> obterAtributosEditaveis(Class<?> classe) {
+	 * List<String> atributosEditaveis = new ArrayList<>();
+	 * 
+	 * Field[] fields = classe.getDeclaredFields();
+	 * 
+	 * for (Field field : fields) { atributosEditaveis.add(field.getName());
+	 * 
+	 * }
+	 * 
+	 * return atributosEditaveis;
+	 * 
+	 * }
+	 */
 }
