@@ -40,7 +40,7 @@ public class Main4 {
 			}
 			case 3: {
 				linhaDeSeparacao();
-				System.out.println("Em produção.......");
+				removeProdutos(lista);
 				linhaDeSeparacao();
 				break;
 			}
@@ -66,12 +66,14 @@ public class Main4 {
 	}
 
 	private static <E> void mostrarLista(List<E> lista) {
+		Integer indice = 0;
 		if (lista.isEmpty()) {
 			System.out.println("Lista vazia");
 		}
 
 		for (Object item : lista) {
-			System.out.println(item);
+			System.out.println("ID: " + indice + "\n" + item + "\n");
+			indice++;
 		}
 	}
 
@@ -97,7 +99,7 @@ public class Main4 {
 				quantidade = sc.nextInt();
 				produtos.addProdutos(quantidade);
 				linhaDeSeparacao();
-				System.out.println("-------Produto atualizado-------" + "\n" + "\n" + produtos);
+				System.out.println("-------Produto atualizado-------" + "\n" + "\n" + produtos + "\n");
 				linhaDeSeparacao();
 				break;
 			}
@@ -107,14 +109,15 @@ public class Main4 {
 				quantidade = sc.nextInt();
 				produtos.removeProdutos(quantidade);
 				linhaDeSeparacao();
-				System.out.println("-------Produto atualizado-------" + "\n" + "\n" + produtos);
+				System.out.println("-------Produto atualizado-------" + "\n" + "\n" + produtos + "\n");
 				linhaDeSeparacao();
 				break;
 			}
 			case 3: {
 				linhaDeSeparacao();
 				produtos.setStatusOrdem(OrdemStatus.COMPLETA);
-				System.out.println("Certo! Salvando Atualizações.........\n" + "Produto aualizado: " + "\n" + produtos);
+				System.out.println(
+						"Certo! Salvando Atualizações.........\n" + "Produto aualizado: " + "\n" + produtos + "\n");
 				linhaDeSeparacao();
 
 				return;
@@ -136,6 +139,19 @@ public class Main4 {
 		System.out.println();
 		System.out.println("----------------------------------");
 		System.out.println();
+	}
+
+	private static void removeProdutos(List<Produtos4> lista) {
+		System.out.println("Escolha um produto para remover pelo ID\nProdutos em estoque:\n");
+		mostrarLista(lista);
+		System.out.print("ID: ");
+		Integer id = sc.nextInt();
+		sc.nextLine();
+		lista.remove((int) id);
+		System.out.println("Produto removido com sucesso!\n");
+		System.out.println("Lista Atualizada:\n");
+		mostrarLista(lista);
+
 	}
 
 }
