@@ -5,12 +5,18 @@
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.lang.IllegalAccessError"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="entidades.Produtos4Util"/>
     <fullyQualifiedTypeName name="java.lang.annotation.Documented"/>
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="entidades.Produtos4"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+    <fullyQualifiedTypeName name="entidades.Produtos4"/>
+    <fullyQualifiedTypeName name="javax.management.AttributeList"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="entidade.Contrato"/>
+    <fullyQualifiedTypeName name="entidade.Trabalhador"/>
+    <fullyQualifiedTypeName name="enums.CargoTrabalhador"/>
+    <fullyQualifiedTypeName name="entidade.Departamento"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
