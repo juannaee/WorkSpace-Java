@@ -5,24 +5,11 @@ import java.util.List;
 
 public class Departamento {
 
-	private String nomeDepartamento;
 	private Double caixa;
 	private List<Trabalhador> trabalhadores = new ArrayList<Trabalhador>();
 
 	public Departamento() {
 
-	}
-
-	public Departamento(String nomeDepartamento) {
-		this.nomeDepartamento = nomeDepartamento;
-	}
-
-	public String getNomeDepartamento() {
-		return this.nomeDepartamento;
-	}
-
-	public void setNomeDepartamento(String nomeDepartamento) {
-		this.nomeDepartamento = nomeDepartamento;
 	}
 
 	public Double getCaixa() {
@@ -48,13 +35,16 @@ public class Departamento {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Departamento: ").append(nomeDepartamento).append("\n");
 		sb.append("Caixa: ").append(lucroTotal() != null ? String.format("%.2f", lucroTotal()) : "Não definido")
 				.append("\n");
 		sb.append("Trabalhadores:\n");
 		for (Trabalhador trabalhador : trabalhadores) {
 			sb.append(trabalhador).append("\n");
 		}
+
+		sb.append("\n");
+
+		sb.append("Caixa do departamento: " + String.format("%.2f", lucroTotal()));
 		return sb.toString();
 	}
 

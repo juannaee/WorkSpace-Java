@@ -1,7 +1,7 @@
 package enums;
 
 public enum CargoTrabalhador {
-	JUNIOR("Junior", 2500.50, 0.05), PLENO("Pleno", 6500.50, 0.08), SENIOR("Senior", 8500.50, 0.10);
+	JUNIOR("Junior", 2500.50, 0.02), PLENO("Pleno", 6500.50, 0.04), SENIOR("Senior", 8500.50, 0.06);
 
 	private final String descricao;
 	private final Double salarioBase;
@@ -25,6 +25,10 @@ public enum CargoTrabalhador {
 	public Double getBonus() {
 		return this.bonus;
 	}
+	
+	public Double bonus() {
+		return salarioBase * bonus;
+	}
 
 	public Double SalarioBruto() {
 		return salarioBase + (salarioBase * bonus);
@@ -34,11 +38,11 @@ public enum CargoTrabalhador {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Detalhes do cargo: ").append("\n");
-		sb.append("Nivel = ").append(descricao).append("\n");
+		sb.append("Nivel: ").append(descricao).append("\n");
 		sb.append("Salário Base: ")
 				.append(getSalarioBase() != null ? String.format("%.2f", getSalarioBase()) : "Não definido")
 				.append("\n");
-		sb.append("Bonus por Nivel = ").append(getBonus() != null ? String.format("%.2f", getBonus()) : "Não definido").append("\n");
+		sb.append("Bonus por Nivel: ").append(getBonus() != null ? String.format("%.2f", getBonus()) : "Não definido").append("%").append("\n");
 		return sb.toString();
 	}
 

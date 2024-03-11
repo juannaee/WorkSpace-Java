@@ -14,9 +14,12 @@
     <fullyQualifiedTypeName name="entidades.Produtos4"/>
     <fullyQualifiedTypeName name="javax.management.AttributeList"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="entidade.DepartTeste"/>
+    <fullyQualifiedTypeName name="entidade.DepartamentoLogica"/>
     <fullyQualifiedTypeName name="entidade.Contrato"/>
     <fullyQualifiedTypeName name="entidade.Trabalhador"/>
     <fullyQualifiedTypeName name="enums.CargoTrabalhador"/>
     <fullyQualifiedTypeName name="entidade.Departamento"/>
+    <fullyQualifiedTypeName name="enums.DepartamentoLogica"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

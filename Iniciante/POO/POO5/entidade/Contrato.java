@@ -4,14 +4,25 @@ public class Contrato {
 
 	private Double valorPorHora;
 	private Integer horasTrabalhadas;
+	private String nomeContrato;
 
 	public Contrato() {
 
 	}
 
-	public Contrato(Double valorPorHora, Integer horasTrabalhadas) {
+	public Contrato(String nomeContrato, Double valorPorHora, Integer horasTrabalhadas) {
 		this.horasTrabalhadas = horasTrabalhadas;
 		this.valorPorHora = valorPorHora;
+		this.nomeContrato = nomeContrato;
+	}
+
+	public String getNomeContrato() {
+		return this.nomeContrato;
+	}
+
+	public void setNomeContrato(String nomeContrato) {
+		this.nomeContrato = nomeContrato;
+
 	}
 
 	public Double getValorPorHora() {
@@ -40,9 +51,9 @@ public class Contrato {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Contrato:\n");
-		sb.append("valorPorHora=").append(valorPorHora).append("\n");
-		sb.append("horasTrabalhadas=").append(horasTrabalhadas).append("\n");
+		sb.append("Contrato: ").append(getNomeContrato()).append("\n");
+		sb.append("valor por Hora: ").append(valorPorHora).append("\n");
+		sb.append("horas Trabalhadas: ").append(horasTrabalhadas).append("\n");
 		return sb.toString();
 	}
 
