@@ -22,4 +22,7 @@
     <fullyQualifiedTypeName name="entidade.Departamento"/>
     <fullyQualifiedTypeName name="enums.DepartamentoLogica"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="entidade.Conta"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
 </qualifiedTypeNameHistroy>
