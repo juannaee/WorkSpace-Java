@@ -1,5 +1,6 @@
 package entidade;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Trabalhador {
 	private Integer idade;
 	private CargoTrabalhador cargo;
 	private List<Contrato> contratos = new ArrayList<Contrato>();
-	private final Double taxContrato = 0.8;
+	private final Double taxContrato = 0.9;
 	private final Double taxSalario = 0.08;
 	private DepartamentoLogica setor;
 
@@ -61,8 +62,9 @@ public class Trabalhador {
 
 	}
 
-	public void addContrato(String nomeContrato, Double valorPorHora, Integer horasTrabalhadas) {
-		Contrato contrato = new Contrato(nomeContrato, valorPorHora, horasTrabalhadas);
+	public void addContrato(String nomeContrato, Double valorPorHora, Integer horasTrabalhadas,
+			LocalDate dataContrato) {
+		Contrato contrato = new Contrato(nomeContrato, valorPorHora, horasTrabalhadas, dataContrato);
 		contratos.add(contrato);
 	}
 
