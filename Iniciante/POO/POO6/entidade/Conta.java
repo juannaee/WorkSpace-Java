@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Conta {
 
-	private Double saldo;
+	protected Double saldo;
 	private UUID id;
 	private String nomeCliente;
 
