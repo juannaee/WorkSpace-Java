@@ -1,17 +1,20 @@
 package model.entidades;
 
+import model.exception.ExceptionsPersonalizada;
+import model.util.ProdutoUtil;
+
 public class Produto extends Deposito {
 
-	public Produto(String nomeProduto, Double precoProduto, Integer qtdDisponivel) throws IllegalArgumentException {
+	public Produto(String nomeProduto, Double precoProduto, Integer qtdDisponivel) throws ExceptionsPersonalizada {
 		super(nomeProduto, precoProduto, qtdDisponivel);
 		if (nomeProduto == null) {
-			throw new IllegalArgumentException("O nome produto não pode estar nulo!");
+			throw ExceptionsPersonalizada.valoresNulos("O nome produto não pode estar nulo!");
 		}
 		if (precoProduto < 0) {
-			throw new IllegalArgumentException("O preço produto não pode ser o valor negativo!");
+			throw ExceptionsPersonalizada.valoresNegativos("O preço produto não pode ser o valor negativo!");
 		}
 		if (qtdDisponivel < 0) {
-			throw new IllegalArgumentException("A quantidade de produtos não pode ser negativa!");
+			throw ExceptionsPersonalizada.valoresNegativos("A quantidade de produtos não pode ser negativa!");
 		}
 
 	}
@@ -35,27 +38,15 @@ public class Produto extends Deposito {
 	}
 
 	@Override
-	public void addProduto(Integer quantidadeAdd) throws IllegalArgumentException {
-		if (quantidadeAdd < 0) {
-			throw new IllegalArgumentException("A quantidade adicionada não pode ser negativa!!");
-		}
-
+	public void addProduto(Integer quantidadeAdd) throws ExceptionsPersonalizada {
+		ProdutoUtil.VerificarQuantidadeAdd(quantidadeAdd, getQtdDisponivel());
 		this.qtdDisponivel += quantidadeAdd;
 
 	}
 
 	@Override
-	public void removerProduto(Integer quantidadeRemover) throws IllegalArgumentException {
-		if (quantidadeRemover < 0) {
-			throw new IllegalArgumentException("A quantidade removida não pode ser negativa!!");
-		}
-
-		if (quantidadeRemover > qtdDisponivel) {
-			throw new IllegalArgumentException(
-					"A quantida removida não pode ser maior que a quantidade disponivel\nQuantidade disponivel: "
-							+ getQtdDisponivel() + "\nTentivade remoção: " + quantidadeRemover);
-
-		}
+	public void removerProduto(Integer quantidadeRemover) throws ExceptionsPersonalizada {
+		ProdutoUtil.verificarQuantidadeRemovida(quantidadeRemover, getQtdDisponivel());
 		this.qtdDisponivel -= quantidadeRemover;
 
 	}

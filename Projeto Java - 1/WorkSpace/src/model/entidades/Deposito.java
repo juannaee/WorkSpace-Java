@@ -1,5 +1,7 @@
 package model.entidades;
 
+import model.exception.ExceptionsPersonalizada;
+
 public abstract class Deposito {
 
 	protected String nomeProduto;
@@ -15,8 +17,8 @@ public abstract class Deposito {
 
 	public abstract Double calcularValorTotal();
 
-	public abstract void addProduto(Integer quantidadeAdd);
+	public abstract void addProduto(Integer quantidadeAdd) throws ExceptionsPersonalizada;
 
-	public abstract void removerProduto(Integer quantidadeRemover);
+	public abstract void removerProduto(Integer quantidadeRemover) throws ExceptionsPersonalizada;
 
 }

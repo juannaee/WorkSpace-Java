@@ -9,6 +9,9 @@ package model.entidades;
 public class ServicoTaxaBrazil implements ServicoTaxa {
 	Double tax;
 
+	public ServicoTaxaBrazil() {
+		
+	}
 	@Override
 	public Double tax(Double valor) {
 		if (valor < 100) {
