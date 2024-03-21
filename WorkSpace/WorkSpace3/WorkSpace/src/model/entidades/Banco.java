@@ -34,15 +34,22 @@ public class Banco {
 		return taxa;
 	}
 
-	public void receberPagamento(Double valor) {
-
-		this.caixa += taxa.tax(valor);
+	public Double receberPagamento(Double valor) {
+		System.out.println("Pagamento de " + valor + " + "  + taxa.tax(valor) + " Realizado");
+		valor += taxa.tax(valor);
+		this.caixa += valor;
+		return valor;
 	}
 
 	public Double realizarEmprestimo(Double valor) throws ExceptionsPersonalizada {
 		BancoUtil.verificacaoEmprestimo(valor, this.caixa);
 		this.caixa -= valor;
 		return valor;
+
+	}
+
+	public Double calculoTaxaEmprestimo(Double valor) {
+		return BancoUtil.verificaoJurosValorEmprestimo(valor);
 
 	}
 

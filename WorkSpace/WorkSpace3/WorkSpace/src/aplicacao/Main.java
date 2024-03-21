@@ -12,8 +12,13 @@ public class Main {
 		Banco banco = new Banco(9000.00, taxBrazil);
 		Mercado mercado = new Mercado(banco);
 
-		mercado.pegarEmprestimo(10000.00);
-		System.out.println(mercado.getCaixa());
+		mercado.pegarEmprestimo(8500.00);
+		System.out.println("Caixa: " + mercado.getCaixa());
+		mercado.pagarEmprestimo(250.00);
+		System.out.println("Caixa: " + mercado.getCaixa());
+		mercado.pagarEmprestimo(5000.00);
+		System.out.println("Caixa: " + mercado.getCaixa());
+		System.out.println(banco.getCaixa());
 
 	}
 

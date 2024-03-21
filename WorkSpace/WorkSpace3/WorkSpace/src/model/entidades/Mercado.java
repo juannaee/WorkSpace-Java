@@ -9,6 +9,7 @@ public class Mercado {
 	private List<Produto> produtos;
 	private Double caixa;
 
+
 	public Mercado() {
 
 	}
@@ -18,8 +19,11 @@ public class Mercado {
 			throw new IllegalArgumentException("O banco não pode ser nulo!");
 		}
 		this.banco = banco;
+
+		this.caixa = 0.0;
 	}
 
+	
 	public Banco getBanco() {
 		return banco;
 	}
@@ -38,7 +42,11 @@ public class Mercado {
 
 	public void pegarEmprestimo(Double valor) throws ExceptionsPersonalizada {
 		this.caixa = banco.realizarEmprestimo(valor);
-
+	}
+	
+	public void pagarEmprestimo(Double valor) {
+		this.caixa -= banco.receberPagamento(valor);	
+		
 	}
 
 }
