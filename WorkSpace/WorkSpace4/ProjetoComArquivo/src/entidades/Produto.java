@@ -3,13 +3,13 @@ package entidades;
 public class Produto implements Comparable<Produto> {
 
 	private String nomeProduto;
-	private Double precoProduto;
+	private Number precoProduto;
 
 	public Produto() {
 
 	}
 
-	public Produto(String nomeProduto, Double precoProduto) {
+	public Produto(String nomeProduto, Number precoProduto) {
 		super();
 		this.nomeProduto = nomeProduto;
 		this.precoProduto = precoProduto;
@@ -23,7 +23,7 @@ public class Produto implements Comparable<Produto> {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public Double getPrecoProduto() {
+	public Number getPrecoProduto() {
 		return precoProduto;
 	}
 
@@ -32,12 +32,18 @@ public class Produto implements Comparable<Produto> {
 	}
 
 	public String toString() {
-		return getNomeProduto() + ", " + String.format("%.2f", getPrecoProduto());
+		if (getPrecoProduto() instanceof Double) {
+			return getNomeProduto() + ", " + String.format("%.2f", getPrecoProduto());
+		} else if (getPrecoProduto() instanceof Integer) {
+			return getNomeProduto() + ", " + String.format("%d", getPrecoProduto());
+		} else
+			return getNomeProduto() + ", " + getPrecoProduto().toString();
+
 	}
 
 	@Override
 	public int compareTo(Produto o) {
-		return precoProduto.compareTo(o.getPrecoProduto());
+		return nomeProduto.compareTo(o.nomeProduto);
 
 	}
 

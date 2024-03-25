@@ -14,7 +14,7 @@ public class Main {
 		Integer contador = 10;
 
 		for (int i = 1; i <= contador; i++) {
-			Produto produto = new Produto("Produto " + i , i * 1000.00);
+			Produto produto = new Produto("Produto " + i , i * 1000);
 			lista.add(produto);
 
 		}
