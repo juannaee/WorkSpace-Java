@@ -1,7 +1,9 @@
 package aplicacao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import entidades.Produto;
 
@@ -20,10 +22,9 @@ public class Main1 {
 
 //		lista.removeIf(p -> p.getPrecoProduto() >= 5000.00);
 		lista.forEach(t -> t.addJuros(0.01));
-
-		for (Produto p : lista) {
-			System.out.println(p);
-		}
+		lista.forEach(System.out::println);
+		List<String> names = lista.stream().map(t -> t.getNomeProduto().toUpperCase()).collect(Collectors.toList());
+		names.forEach(System.out::println);
 
 	}
 
